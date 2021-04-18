@@ -114,7 +114,7 @@ const lightboxImageEl =  document.querySelector('.lightbox__image');
 
 //функция клика по изображению галереи
 function onClick(event){
-  event.preventDefault);
+  event.preventDefault();
   if (event.target.nodeName === 'IMG'){   
     lightboxEl.classList.add('is-open');    
     lightboxImageEl.src = event.target.src; 
