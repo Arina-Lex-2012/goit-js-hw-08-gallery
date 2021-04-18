@@ -90,6 +90,8 @@ for (let i = 0; i < galleryList.length; i+=1) {
   galleryItemEl.appendChild(galleryItemLinkEl);
 
   galleryListEl.push(galleryItemEl);
+
+
 };
 
 galleryEl.append(...galleryListEl);
@@ -104,26 +106,22 @@ galleryItemsEl.addEventListener('click', onClick);
 const lightboxEl = document.querySelector('.js-lightbox');
 
 const galleryItemLinkEl = document.querySelector('a');
+const galleryItemImageEl = document.querySelector('.gallery__image');
+galleryItemLinkEl.addEventListener('click', onClick);
+galleryItemImageEl.addEventListener('click', onClick);
 
 const lightboxImageEl =  document.querySelector('.lightbox__image');
 
 //функция клика по изображению галереи
 function onClick(event){
-  console.log(event.target.nodeName);
-  lightboxEl.classList.add('is-open'); 
-  lightboxImageEl.src = galleryItemLinkEl.href;
-
-  // if (event.target.nodeName === 'UL'){
-  //   console.log(event.target.nodeName);
-  //   console.log('UL');
-  //   lightboxEl.classList.add('is-open'); 
-  //   lightboxImageEl.src = galleryItemLinkEl.href;
-  //   return;
-  // } else{
-  //   console.log('NOT UL');
-  //   console.log(event.target.nodeName);
-  // };
+  event.preventDefault('A');
+  if (event.target.nodeName === 'IMG'){   
+    lightboxEl.classList.add('is-open');    
+    lightboxImageEl.src = event.target.src; 
+    return;
+  };
 };
+
 
 //  добавление слушателя событий на lightbox__button, lightbox__overlay и
 //  функция закрытия модального окна
