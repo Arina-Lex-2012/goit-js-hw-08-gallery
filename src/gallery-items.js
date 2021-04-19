@@ -82,7 +82,7 @@ for (let i = 0; i < galleryList.length; i+=1) {
 
   const galleryItemImageEl = document.createElement('img');
   galleryItemImageEl.classList.add('gallery__image');
-  galleryItemImageEl.src = galleryList[i].preview;
+  galleryItemImageEl.src = galleryList[i].original;
   galleryItemImageEl.setAttribute ('data-source', galleryList[i].original);
   galleryItemImageEl.alt = galleryList[i].description;
 
